@@ -52,7 +52,10 @@ Scripts to check the differences in cosine similarities between two different HO
 
 To reproduce the submission file, do
 
-`python main.py`
+```
+cd MLP\ code
+python main.py
+```
 
 This automatically creates a json file for submission (named after the current git commit hash). The json file and the MLP model parameters are saved under *model_outputs*. 
 
