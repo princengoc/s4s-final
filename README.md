@@ -1,6 +1,8 @@
 # Team Hash Brown Science4Cast Submission
 
-This code reproduces Team Hash Brown's (@princengoc, @Xieyangxinyu) best submission for the competition https://www.iarai.ac.at/science4cast
+This code reproduces Team Hash Brown's (@princengoc, @Xieyangxinyu) best submission (ee5a) for the competition https://www.iarai.ac.at/science4cast
+
+Our team came *second* with a score of 0.92738 (0.01 below the winner). 
 
 Authors: Ngoc Tran and Yangxinyu Xie
 
