@@ -201,9 +201,13 @@ def genEdgeFeatures(G,t0,node_features_t0,node_features_1,train_edges,scaler = S
   #deal with test
   print('generating edge features for test set')
   #generate features on everybody. Need to replace blinds by the average of newborns (in time 0.9 to 1.0)
-  good_file = '../data/raw/TrainSet'+yr+'_unseen_good.pkl'
-  pirate_file = '../data/raw/TrainSet'+yr+'_unseen_pirate_unpacked.pkl'
-  blind_file = '../data/raw/TrainSet'+yr+'_unseen_blind.pkl'
+  if yr == '2014':
+    prefix = 'TrainSet'
+  else:
+    prefix = 'CompetitionSet'
+  good_file = '../data/raw/'+prefix+yr+'_unseen_good.pkl'
+  pirate_file = '../data/raw/'+prefix+yr+'_unseen_pirate_unpacked.pkl'
+  blind_file = '../data/raw/'+prefix+yr+'_unseen_blind.pkl'
   if (not os.path.exists(pirate_file)) or (not os.path.exists(good_file)) or (not os.path.exists(blind_file)):
     processTestFile(yr = yr)
   if yr != '2017':
@@ -303,7 +307,7 @@ def genEdgeFeatures(G,t0,node_features_t0,node_features_1,train_edges,scaler = S
  
 
   #turn into a big X_test with the correct order
-  good_idx,pirate_unpacked_idx,blind_idx = pickle.load(open('../data/raw/TrainSet' + yr +'_unseen_idx_for_submission','rb'))
+  good_idx,pirate_unpacked_idx,blind_idx = pickle.load(open('../data/raw/' +prefix + yr +'_unseen_idx_for_submission','rb'))
   total_unseen = len(good_idx) + len(pirate_unpacked_idx) + len(blind_idx)
   d = edge_feats['good'].shape[1]
   X_test = np.empty((total_unseen,d))
