@@ -19,7 +19,7 @@ cd s4s-final
 Getting the data. 
 
 1. Download data files from the competition's organizers: https://www.iarai.ac.at/science4cast/ 
-2. Unzip and put the data files in the subfolder data/raw/
+2. Unzip and put the data files in the subfolder `data/raw/`
 
 Run the following to install all the required packages.
 
@@ -43,9 +43,9 @@ python get_HOPREC_embedding.py --year 2017 --t_min 0.5 --t_max 1
 
 Since HOPREC is random, this may produce different embeddings, and therefore possibly different cosine scores than what we had. 
 
-Our particular HOPREC embedding is already included under data/HOPREC/2017_raw_count/
+Our particular HOPREC embedding is already included under `data/HOPREC/2017_raw_count/`
 
-Scripts to check the differences in cosine similarities between two different HOPREC embeddings are in HOPREC/check_two_HOPREC_embeddings.py
+Scripts to check the differences in cosine similarities between two different HOPREC embeddings are in `HOPREC/check_two_HOPREC_embeddings.py`
 
 
 ### Reproduce the submission
