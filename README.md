@@ -27,11 +27,9 @@ Run the following to install all the required packages.
 pip install -r requirement.txt
 ```
 
-##### HOPREC Embedding
+##### Optional: rerun HOPREC Embedding
 
-You can get *new* HOPREC embedding by running the following shell codes. Since HOPREC is random, this may produce different embeddings, and therefore possibly different cosine scores than what we had. 
-
-Our particular HOPREC embedding is already included under data/HOPREC/
+You can get *new* HOPREC embedding by running the following shell codes.
 
 ```buildoutcfg
 cd HOPREC
@@ -43,9 +41,19 @@ python get_HOPREC_embedding.py --year 2017 --t_min 0.5 --t_max 0.9
 python get_HOPREC_embedding.py --year 2017 --t_min 0.5 --t_max 1
 ```
 
+Since HOPREC is random, this may produce different embeddings, and therefore possibly different cosine scores than what we had. 
+
+Our particular HOPREC embedding is already included under data/HOPREC/2017_raw_count/
+
+Scripts to check the differences in cosine similarities between two different HOPREC embeddings are in HOPREC/check_two_HOPREC_embeddings.py
+
+
 ### Reproduce the submission
 
 To reproduce the submission file, do
 
 `python main.py`
 
+This automatically creates a json file for submission (named after the current git commit hash). The json file and the MLP model parameters are saved under *model_outputs*. 
+
+*utils_common.py* has the function `reproducibility_check`, which eats two json submissions and print out statistics on their agreements and differences. We used this to verify that what we submitted and what is produced by the code above agree in 99.999% out of 1 million entries of the test set. 
