@@ -16,8 +16,8 @@ cd s4s-final
 
 Getting the data. 
 
-1. Download data files from the competition's organizers: TODO
-2. Unzip and put the data files in the folder s4s/data/raw/
+1. Download data files from the competition's organizers: https://www.iarai.ac.at/science4cast/ 
+2. Unzip and put the data files in the subfolder data/raw/
 
 Run the following to install all the required packages.
 
@@ -27,7 +27,9 @@ pip install -r requirement.txt
 
 ##### HOPREC Embedding
 
-You can get the HOPREC embedding by running the following shell codes.
+You can get *new* HOPREC embedding by running the following shell codes. Since HOPREC is random, this may produce different embeddings, and therefore possibly different cosine scores than what we had. 
+
+Our particular HOPREC embedding is already included under data/HOPREC/
 
 ```buildoutcfg
 cd HOPREC
